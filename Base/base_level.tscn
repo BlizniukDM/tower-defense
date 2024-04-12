@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://csdn257y1ycc4"]
+[gd_scene load_steps=20 format=3 uid="uid://csdn257y1ycc4"]
 
 [ext_resource type="PackedScene" uid="uid://bcr32k7cn45td" path="res://touch_camera/ray_picker_camera.tscn" id="1_27hkk"]
 [ext_resource type="MeshLibrary" uid="uid://dg58ppm2i0hbd" path="res://mesh_library/SpaceLibrary.tres" id="1_uq8d2"]
@@ -8,6 +8,7 @@
 [ext_resource type="Script" path="res://Base/turret_manager.gd" id="5_ya3x5"]
 [ext_resource type="PackedScene" uid="uid://bps5l8hkjywhw" path="res://base/turret.tscn" id="6_4wead"]
 [ext_resource type="Script" path="res://Base/bank.gd" id="8_8knya"]
+[ext_resource type="FontFile" uid="uid://cce5smaxr8lfu" path="res://assets/Asap-Bold.ttf" id="8_ilncq"]
 [ext_resource type="PackedScene" uid="uid://doglsi3ujx0ji" path="res://difficulty_manager/difficulty_manager.tscn" id="9_428ay"]
 [ext_resource type="PackedScene" uid="uid://dp1j3pia2ebpc" path="res://ui/victory_layer.tscn" id="10_8kuo6"]
 
@@ -36,6 +37,9 @@ point_count = 5
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_chsko"]
 albedo_color = Color(0.360784, 0.360784, 0.360784, 1)
+
+[sub_resource type="Theme" id="Theme_uol8u"]
+default_font = ExtResource("8_ilncq")
 
 [sub_resource type="LabelSettings" id="LabelSettings_mlyqj"]
 font_size = 64
@@ -133,6 +137,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
+theme = SubResource("Theme_uol8u")
 theme_override_constants/margin_left = 16
 theme_override_constants/margin_top = 16
 theme_override_constants/margin_right = 16
@@ -146,6 +151,7 @@ size_flags_horizontal = 0
 size_flags_vertical = 8
 text = "placeholder"
 label_settings = SubResource("LabelSettings_mlyqj")
+uppercase = true
 
 [node name="DifficultyManager" parent="." instance=ExtResource("9_428ay")]
 

@@ -1,7 +1,11 @@
-[gd_scene load_steps=4 format=3 uid="uid://dp1j3pia2ebpc"]
+[gd_scene load_steps=6 format=3 uid="uid://dp1j3pia2ebpc"]
 
 [ext_resource type="Script" path="res://ui/victory_layer.gd" id="1_u0t2v"]
-[ext_resource type="Texture2D" uid="uid://dcfjsaptctf4i" path="res://assets/star.png" id="2_norct"]
+[ext_resource type="FontFile" uid="uid://cce5smaxr8lfu" path="res://assets/Asap-Bold.ttf" id="2_0u3h4"]
+[ext_resource type="Texture2D" uid="uid://b56xx1sioo0xk" path="res://assets/star.png" id="3_enyww"]
+
+[sub_resource type="Theme" id="Theme_uol8u"]
+default_font = ExtResource("2_0u3h4")
 
 [sub_resource type="LabelSettings" id="LabelSettings_kvb6f"]
 font_size = 96
@@ -24,6 +28,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = SubResource("Theme_uol8u")
 
 [node name="PanelContainer" type="PanelContainer" parent="CenterContainer"]
 custom_minimum_size = Vector2(400, 400)
@@ -46,7 +51,7 @@ unique_name_in_owner = true
 custom_minimum_size = Vector2(128, 128)
 layout_mode = 2
 size_flags_horizontal = 3
-texture = ExtResource("2_norct")
+texture = ExtResource("3_enyww")
 expand_mode = 2
 stretch_mode = 5
 
@@ -56,7 +61,7 @@ modulate = Color(0, 0, 0, 1)
 custom_minimum_size = Vector2(128, 128)
 layout_mode = 2
 size_flags_horizontal = 3
-texture = ExtResource("2_norct")
+texture = ExtResource("3_enyww")
 expand_mode = 2
 stretch_mode = 5
 
@@ -66,7 +71,7 @@ modulate = Color(0, 0, 0, 1)
 custom_minimum_size = Vector2(128, 128)
 layout_mode = 2
 size_flags_horizontal = 3
-texture = ExtResource("2_norct")
+texture = ExtResource("3_enyww")
 expand_mode = 2
 stretch_mode = 5
 
@@ -91,6 +96,7 @@ horizontal_alignment = 1
 
 [node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer/PanelContainer/VBoxContainer"]
 layout_mode = 2
+size_flags_vertical = 10
 
 [node name="RetryButton" type="Button" parent="CenterContainer/PanelContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
