@@ -11,12 +11,13 @@ config_version=5
 [application]
 
 config/name="Tower Defense"
-run/main_scene="res://Base/base_level.tscn"
+run/main_scene="res://levels/menu.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icon.svg"
 
 [display]
 
+window/stretch/mode="canvas_items"
 window/quality/msaa_3d=0
 
 [input]

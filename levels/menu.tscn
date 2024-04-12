@@ -1,0 +1,87 @@
+[gd_scene load_steps=10 format=3 uid="uid://cufxoq276p2e"]
+
+[ext_resource type="Script" path="res://levels/menu.gd" id="1_e5rmc"]
+[ext_resource type="Texture2D" uid="uid://c0v14trajegiq" path="res://assets/tower-defense.png" id="1_x2885"]
+[ext_resource type="FontFile" uid="uid://cce5smaxr8lfu" path="res://assets/Asap-Bold.ttf" id="2_1ncj2"]
+[ext_resource type="AudioStream" uid="uid://ck7dgne623hvd" path="res://audio/Menu.ogg" id="4_bn5uh"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dsbh0"]
+bg_color = Color(0.0745098, 0.623529, 1, 0.368627)
+corner_radius_top_left = 100
+corner_radius_top_right = 100
+corner_radius_bottom_right = 100
+corner_radius_bottom_left = 100
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g1es2"]
+bg_color = Color(0.0745098, 0.623529, 1, 1)
+corner_radius_top_left = 100
+corner_radius_top_right = 100
+corner_radius_bottom_right = 100
+corner_radius_bottom_left = 100
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_p2aye"]
+bg_color = Color(0.980392, 0, 0.92549, 1)
+corner_radius_top_left = 100
+corner_radius_top_right = 100
+corner_radius_bottom_right = 100
+corner_radius_bottom_left = 100
+
+[sub_resource type="Theme" id="Theme_w75ko"]
+Button/styles/hover = SubResource("StyleBoxFlat_dsbh0")
+Button/styles/normal = SubResource("StyleBoxFlat_g1es2")
+Button/styles/pressed = SubResource("StyleBoxFlat_p2aye")
+
+[sub_resource type="Theme" id="Theme_uol8u"]
+default_font = ExtResource("2_1ncj2")
+
+[node name="Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_w75ko")
+script = ExtResource("1_e5rmc")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -155.0
+offset_bottom = 221.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_x2885")
+
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -210.0
+offset_right = 210.0
+grow_vertical = 0
+theme = SubResource("Theme_uol8u")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="AspectRatioContainer"]
+layout_mode = 2
+
+[node name="PlayButton" type="Button" parent="AspectRatioContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+text = "PLAY"
+
+[node name="QuitButton" type="Button" parent="AspectRatioContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+text = "QUIT"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_bn5uh")
+volume_db = -7.0
+autoplay = true
+
+[connection signal="pressed" from="AspectRatioContainer/VBoxContainer/PlayButton" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="AspectRatioContainer/VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]

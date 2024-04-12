@@ -8,6 +8,7 @@ extends Node3D
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var turret_base: Node3D = $TurretBase
 @onready var cannon: Node3D = $TurretBase/TurretTop/Cannon
+@onready var shooting: AudioStreamPlayer = $Shooting
 
 
 var enemy_path: Path3D
@@ -26,6 +27,7 @@ func _on_timer_timeout() -> void:
         shot.global_position = cannon.global_position
         shot.direction = turret_base.global_transform.basis.z
         animation_player.play("fire")
+        shooting.play()
 
 
 func find_best_target() -> PathFollow3D:

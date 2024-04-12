@@ -124,7 +124,7 @@ bind/17/pose = Transform3D(1.54245e-06, -4.19436, -0.168111, -2.17438e-07, -0.16
 [node name="Enemy" type="PathFollow3D"]
 use_model_front = true
 script = ExtResource("1_uwhg3")
-speed = 5.0
+speed = 6.0
 max_health = 50
 enemy_cost = 15
 

@@ -1,16 +1,17 @@
-[gd_scene load_steps=20 format=3 uid="uid://csdn257y1ycc4"]
+[gd_scene load_steps=21 format=3 uid="uid://csdn257y1ycc4"]
 
-[ext_resource type="PackedScene" uid="uid://bcr32k7cn45td" path="res://touch_camera/ray_picker_camera.tscn" id="1_27hkk"]
-[ext_resource type="MeshLibrary" uid="uid://dg58ppm2i0hbd" path="res://mesh_library/SpaceLibrary.tres" id="1_uq8d2"]
-[ext_resource type="PackedScene" uid="uid://cics6gg2adanw" path="res://enemy/enemy.tscn" id="2_e45sn"]
-[ext_resource type="PackedScene" uid="uid://55nu8u60uexy" path="res://Base/base.tscn" id="3_68jvv"]
-[ext_resource type="Script" path="res://Base/enemy_path.gd" id="3_rlwds"]
-[ext_resource type="Script" path="res://Base/turret_manager.gd" id="5_ya3x5"]
-[ext_resource type="PackedScene" uid="uid://bps5l8hkjywhw" path="res://Base/turret.tscn" id="6_4wead"]
-[ext_resource type="Script" path="res://Base/bank.gd" id="8_8knya"]
-[ext_resource type="FontFile" uid="uid://cce5smaxr8lfu" path="res://assets/Asap-Bold.ttf" id="8_ilncq"]
-[ext_resource type="PackedScene" uid="uid://doglsi3ujx0ji" path="res://difficulty_manager/difficulty_manager.tscn" id="9_428ay"]
-[ext_resource type="PackedScene" uid="uid://dp1j3pia2ebpc" path="res://ui/victory_layer.tscn" id="10_8kuo6"]
+[ext_resource type="PackedScene" uid="uid://bcr32k7cn45td" path="res://touch_camera/ray_picker_camera.tscn" id="1_oyo3q"]
+[ext_resource type="MeshLibrary" uid="uid://dg58ppm2i0hbd" path="res://mesh_library/SpaceLibrary.tres" id="2_8pvto"]
+[ext_resource type="Script" path="res://Base/enemy_path.gd" id="3_xi08v"]
+[ext_resource type="PackedScene" uid="uid://cics6gg2adanw" path="res://enemy/enemy.tscn" id="4_w5ywg"]
+[ext_resource type="PackedScene" uid="uid://55nu8u60uexy" path="res://Base/base.tscn" id="5_7u7xn"]
+[ext_resource type="Script" path="res://Base/turret_manager.gd" id="6_fvy5k"]
+[ext_resource type="PackedScene" uid="uid://bps5l8hkjywhw" path="res://Base/turret.tscn" id="7_3se4w"]
+[ext_resource type="FontFile" uid="uid://cce5smaxr8lfu" path="res://assets/Asap-Bold.ttf" id="8_3nlyj"]
+[ext_resource type="Script" path="res://Base/bank.gd" id="9_ct7pw"]
+[ext_resource type="PackedScene" uid="uid://doglsi3ujx0ji" path="res://difficulty_manager/difficulty_manager.tscn" id="10_7o0qd"]
+[ext_resource type="PackedScene" uid="uid://dp1j3pia2ebpc" path="res://ui/victory_layer.tscn" id="11_ssaal"]
+[ext_resource type="AudioStream" uid="uid://dn6clb35pi5xu" path="res://audio/Level.ogg" id="12_bi3mc"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_yda6b"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -39,7 +40,7 @@ point_count = 5
 albedo_color = Color(0.360784, 0.360784, 0.360784, 1)
 
 [sub_resource type="Theme" id="Theme_uol8u"]
-default_font = ExtResource("8_ilncq")
+default_font = ExtResource("8_3nlyj")
 
 [sub_resource type="LabelSettings" id="LabelSettings_mlyqj"]
 font_size = 64
@@ -60,13 +61,13 @@ flip_faces = true
 size = Vector3(100, 2.08165e-12, 100)
 material = SubResource("StandardMaterial3D_1sj0l")
 
-[node name="RayPickerCamera" parent="." node_paths=PackedStringArray("gridmap") instance=ExtResource("1_27hkk")]
+[node name="RayPickerCamera" parent="." node_paths=PackedStringArray("gridmap") instance=ExtResource("1_oyo3q")]
 transform = Transform3D(1, -6.64895e-16, 1.47403e-16, 1.47404e-16, 0.422618, 0.906308, -6.64895e-16, -0.906308, 0.422618, 2.08165e-12, 14.5, 9.5)
 gridmap = NodePath("../GridMap")
 turret_cost = 100
 
 [node name="GridMap" type="GridMap" parent="."]
-mesh_library = ExtResource("1_uq8d2")
+mesh_library = ExtResource("2_8pvto")
 cell_size = Vector3(4, 4, 4)
 cell_center_y = false
 data = {
@@ -76,8 +77,8 @@ metadata/_editor_floor_ = Vector3(0, 0, 0)
 
 [node name="EnemyPath" type="Path3D" parent="." node_paths=PackedStringArray("difficulty_manager")]
 curve = SubResource("Curve3D_7c3oe")
-script = ExtResource("3_rlwds")
-enemy_scene = ExtResource("2_e45sn")
+script = ExtResource("3_xi08v")
+enemy_scene = ExtResource("4_w5ywg")
 difficulty_manager = NodePath("../DifficultyManager")
 
 [node name="Road" type="CSGPolygon3D" parent="EnemyPath"]
@@ -123,11 +124,11 @@ path_joined = false
 [node name="Timer" type="Timer" parent="EnemyPath"]
 autostart = true
 
-[node name="Base" parent="." instance=ExtResource("3_68jvv")]
+[node name="Base" parent="." instance=ExtResource("5_7u7xn")]
 
 [node name="TurretManager" type="Node3D" parent="." node_paths=PackedStringArray("enemy_path")]
-script = ExtResource("5_ya3x5")
-turret = ExtResource("6_4wead")
+script = ExtResource("6_fvy5k")
+turret = ExtResource("7_3se4w")
 enemy_path = NodePath("../EnemyPath")
 
 [node name="Bank" type="MarginContainer" parent="." groups=["bank"]]
@@ -142,7 +143,7 @@ theme_override_constants/margin_left = 16
 theme_override_constants/margin_top = 16
 theme_override_constants/margin_right = 16
 theme_override_constants/margin_bottom = 16
-script = ExtResource("8_8knya")
+script = ExtResource("9_ct7pw")
 starting_gold = 150
 
 [node name="Label" type="Label" parent="Bank"]
@@ -153,9 +154,14 @@ text = "placeholder"
 label_settings = SubResource("LabelSettings_mlyqj")
 uppercase = true
 
-[node name="DifficultyManager" parent="." instance=ExtResource("9_428ay")]
+[node name="DifficultyManager" parent="." instance=ExtResource("10_7o0qd")]
 
-[node name="VictoryLayer" parent="." instance=ExtResource("10_8kuo6")]
+[node name="VictoryLayer" parent="." instance=ExtResource("11_ssaal")]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("12_bi3mc")
+volume_db = -8.0
+autoplay = true
 
 [connection signal="timeout" from="EnemyPath/Timer" to="EnemyPath" method="spawn_enemy"]
 [connection signal="stop_spawning_enemy" from="DifficultyManager" to="EnemyPath" method="_on_difficulty_manager_stop_spawning_enemy"]
