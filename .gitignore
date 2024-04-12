@@ -20,8 +20,8 @@ mono_crash.*.json
 .DS_Store
 
 .cookie
-.icon.svg
-.icon.svg.import
+icon.svg
+icon.svg.import
 # Builds
 [Bb]uilds/
 *.app*
