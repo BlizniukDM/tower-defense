@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://dp1j3pia2ebpc"]
+[gd_scene load_steps=8 format=3 uid="uid://dp1j3pia2ebpc"]
 
 [ext_resource type="Script" path="res://ui/victory_layer.gd" id="1_u0t2v"]
 [ext_resource type="FontFile" uid="uid://cce5smaxr8lfu" path="res://assets/Asap-Bold.ttf" id="2_0u3h4"]
@@ -10,7 +10,13 @@ default_font = ExtResource("2_0u3h4")
 [sub_resource type="LabelSettings" id="LabelSettings_kvb6f"]
 font_size = 96
 
-[node name="VictoryLayer" type="CanvasLayer"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_he7yx"]
+bg_color = Color(0, 0.729412, 0.0666667, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mvnp2"]
+bg_color = Color(1, 0.352941, 0.141176, 1)
+
+[node name="VictoryLayer" type="CanvasLayer" groups=["ui"]]
 visible = false
 script = ExtResource("1_u0t2v")
 
@@ -38,8 +44,9 @@ layout_mode = 2
 layout_mode = 2
 
 [node name="Label" type="Label" parent="CenterContainer/PanelContainer/VBoxContainer"]
+unique_name_in_owner = true
 layout_mode = 2
-text = "Victory!"
+text = "Defeat!"
 label_settings = SubResource("LabelSettings_kvb6f")
 horizontal_alignment = 1
 
@@ -48,6 +55,7 @@ layout_mode = 2
 
 [node name="Star1" type="TextureRect" parent="CenterContainer/PanelContainer/VBoxContainer/StarContainer"]
 unique_name_in_owner = true
+modulate = Color(0, 0, 0, 1)
 custom_minimum_size = Vector2(128, 128)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -76,6 +84,8 @@ expand_mode = 2
 stretch_mode = 5
 
 [node name="SurvivedLebel" type="Label" parent="CenterContainer/PanelContainer/VBoxContainer"]
+unique_name_in_owner = true
+visible = false
 layout_mode = 2
 text = "Survived + 1"
 horizontal_alignment = 1
@@ -98,17 +108,33 @@ horizontal_alignment = 1
 layout_mode = 2
 size_flags_vertical = 10
 
-[node name="RetryButton" type="Button" parent="CenterContainer/PanelContainer/VBoxContainer/HBoxContainer"]
+[node name="NextButton" type="Button" parent="CenterContainer/PanelContainer/VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
+process_mode = 3
+visible = false
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_font_sizes/font_size = 32
-text = "Retry"
+theme_override_styles/normal = SubResource("StyleBoxFlat_he7yx")
+text = "Next level"
+
+[node name="RetryButton" type="Button" parent="CenterContainer/PanelContainer/VBoxContainer/HBoxContainer"]
+process_mode = 3
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_he7yx")
+text = "Rerty
+"
 
 [node name="QuitButton" type="Button" parent="CenterContainer/PanelContainer/VBoxContainer/HBoxContainer"]
+process_mode = 3
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_mvnp2")
 text = "Quit"
 
+[connection signal="pressed" from="CenterContainer/PanelContainer/VBoxContainer/HBoxContainer/NextButton" to="." method="_on_next_button_pressed"]
 [connection signal="pressed" from="CenterContainer/PanelContainer/VBoxContainer/HBoxContainer/RetryButton" to="." method="_on_retry_button_pressed"]
 [connection signal="pressed" from="CenterContainer/PanelContainer/VBoxContainer/HBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]

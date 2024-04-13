@@ -5,14 +5,15 @@
 [sub_resource type="Curve" id="Curve_mly1y"]
 min_value = 0.25
 max_value = 3.0
-_data = [Vector2(0, 2.96829), 0.0, 0.124425, 0, 0, Vector2(1, 0.25), -6.64681, 0.0, 0, 0]
+_data = [Vector2(0, 2.00915), 0.0, -0.0820533, 0, 0, Vector2(0.994778, 0.250849), -4.06278, 0.0, 0, 0]
 point_count = 2
 
 [sub_resource type="Curve" id="Curve_onr4o"]
 min_value = 10.0
-max_value = 100.0
-_data = [Vector2(0, 24.8781), 0.0, 75.1219, 0, 1, Vector2(1, 100), 75.1219, 0.0, 1, 0]
+max_value = 150.0
+_data = [Vector2(0, 24.8781), 0.0, 125.122, 0, 1, Vector2(1, 150), 125.122, 0.0, 1, 0]
 point_count = 2
+metadata/_snap_enabled = true
 
 [node name="DifficultyManager" type="Node"]
 script = ExtResource("1_h5l2q")
