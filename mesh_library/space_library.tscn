@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://bb5cbd4a7g8nj"]
 
-[ext_resource type="PackedScene" uid="uid://b4mtjk58gp8nl" path="res://assets/Tree.glb" id="1_swm5p"]
+[ext_resource type="PackedScene" uid="uid://b4mtjk58gp8nl" path="res://assets/glb_files/Tree.glb" id="1_swm5p"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ymrcq"]
 blend_mode = 1

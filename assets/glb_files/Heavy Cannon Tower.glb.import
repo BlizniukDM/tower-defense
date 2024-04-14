@@ -1,0 +1,43 @@
+[remap]
+
+importer="scene"
+importer_version=1
+type="PackedScene"
+uid="uid://crnanii6ea741"
+path="res://.godot/imported/Heavy Cannon Tower.glb-37bf498da2f48d527e01ac1fd0ce3ef0.scn"
+
+[deps]
+
+source_file="res://assets/glb_files/Heavy Cannon Tower.glb"
+dest_files=["res://.godot/imported/Heavy Cannon Tower.glb-37bf498da2f48d527e01ac1fd0ce3ef0.scn"]
+
+[params]
+
+nodes/root_type=""
+nodes/root_name=""
+nodes/apply_root_scale=true
+nodes/root_scale=1.0
+meshes/ensure_tangents=true
+meshes/generate_lods=true
+meshes/create_shadow_meshes=true
+meshes/light_baking=1
+meshes/lightmap_texel_size=0.2
+meshes/force_disable_compression=false
+skins/use_named_skins=true
+animation/import=true
+animation/fps=30
+animation/trimming=false
+animation/remove_immutable_tracks=true
+import_script/path=""
+_subresources={
+"nodes": {
+"PATH:Sketchfab_model/a4961cd6389744cea3bc969c948bd54f_fbx/RootNode/tier2cannon": {
+"import/skip_import": true
+},
+"PATH:Sketchfab_model/a4961cd6389744cea3bc969c948bd54f_fbx/RootNode/tier3cannon": {
+"import/skip_import": true
+}
+}
+}
+gltf/naming_version=1
+gltf/embedded_image_handling=1

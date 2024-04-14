@@ -1,7 +1,7 @@
 [gd_scene load_steps=10 format=3 uid="uid://cics6gg2adanw"]
 
 [ext_resource type="Script" path="res://enemy/enemy.gd" id="1_uwhg3"]
-[ext_resource type="PackedScene" uid="uid://cbga21kr3he14" path="res://assets/Barbarian.glb" id="2_hogkc"]
+[ext_resource type="PackedScene" uid="uid://cbga21kr3he14" path="res://assets/glb_files/Barbarian.glb" id="2_7nm0t"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_1v7nw"]
 radius = 0.7
@@ -139,30 +139,33 @@ libraries = {
 "": SubResource("AnimationLibrary_2xyvo")
 }
 
-[node name="Barbarian" parent="." instance=ExtResource("2_hogkc")]
+[node name="Barbarian" parent="." instance=ExtResource("2_7nm0t")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 0.05, 2.08165e-12)
 
 [node name="Skeleton3D" parent="Barbarian/Armature" index="0"]
-bones/0/position = Vector3(2.37802e-15, -0.419783, 0.391841)
-bones/0/rotation = Quaternion(0.126025, -0.0403579, 0.00513131, 0.991193)
-bones/1/rotation = Quaternion(-0.0867336, -0.0939546, 0.0139671, 0.991693)
-bones/2/rotation = Quaternion(0.00291669, 0.0787525, -0.601163, 0.795231)
-bones/3/rotation = Quaternion(0.261764, -0.289389, -0.566301, 0.725974)
-bones/4/rotation = Quaternion(0.519617, 0.12347, -0.308202, 0.787252)
-bones/6/rotation = Quaternion(0.0407583, 0.10782, 0.00276297, 0.993331)
-bones/7/rotation = Quaternion(-0.0998947, -0.212419, 0.584011, 0.777065)
-bones/8/rotation = Quaternion(-0.0310279, -0.482977, 0.464034, 0.741919)
-bones/9/rotation = Quaternion(0.557384, 0.218879, 0.152004, 0.786327)
-bones/10/position = Vector3(-4.47035e-08, -0.419783, 0.391841)
-bones/10/rotation = Quaternion(0.565961, 0.367755, 0.593702, -0.438135)
-bones/11/rotation = Quaternion(-0.532603, 0.0921203, 0.101313, 0.835215)
-bones/12/rotation = Quaternion(-0.130127, -0.0276167, 0.654494, 0.744273)
-bones/13/rotation = Quaternion(-0.00844364, -0.0494643, -0.643228, 0.764028)
-bones/14/position = Vector3(-7.45058e-08, -0.419783, 0.391841)
-bones/14/rotation = Quaternion(-0.631146, 0.239186, 0.6732, 0.302069)
-bones/15/rotation = Quaternion(-0.394201, 0.182378, 0.283279, 0.855042)
+bones/0/rotation = Quaternion(0.0728834, 1.18892e-07, 8.68838e-09, 0.997341)
+bones/2/rotation = Quaternion(-0.0413496, 0.136599, -0.595928, 0.790254)
+bones/3/rotation = Quaternion(0.127626, 0.0534261, -0.382432, 0.913566)
+bones/4/rotation = Quaternion(9.69571e-09, 9.25445e-08, -0.0480527, 0.998845)
+bones/5/rotation = Quaternion(0.0260031, -1.19169e-07, 3.0998e-09, 0.999662)
+bones/6/rotation = Quaternion(0.154946, 1.1777e-07, 1.8471e-08, 0.987923)
+bones/7/rotation = Quaternion(-0.0413498, -0.136599, 0.595928, 0.790254)
+bones/7/scale = Vector3(1, 1, 1)
+bones/8/rotation = Quaternion(0.127626, -0.0534261, 0.382432, 0.913566)
+bones/8/scale = Vector3(1, 1, 1)
+bones/9/rotation = Quaternion(-1.33414e-08, -2.31021e-07, 0.0480527, 0.998845)
+bones/10/rotation = Quaternion(0.623438, 0.333654, 0.623438, -0.333654)
+bones/11/rotation = Quaternion(-0.415547, 0.0226034, 0.0493867, 0.907949)
+bones/12/rotation = Quaternion(-0.027108, 0.00238988, 0.00268191, 0.999626)
+bones/12/scale = Vector3(1, 1, 1)
+bones/13/rotation = Quaternion(-0.0269649, -0.0222622, -0.732301, 0.680083)
+bones/13/scale = Vector3(1, 1, 1)
+bones/14/rotation = Quaternion(-0.623438, 0.333654, 0.623438, 0.333654)
+bones/15/rotation = Quaternion(-0.415547, -0.0226034, -0.0493867, 0.907949)
 bones/16/rotation = Quaternion(-0.027108, -0.00238988, -0.00268191, 0.999626)
+bones/16/scale = Vector3(1, 1, 1)
 bones/17/rotation = Quaternion(-0.0269649, 0.0222622, 0.732301, 0.680083)
+bones/17/scale = Vector3(1, 1, 1)
 
 [node name="Highlight" type="MeshInstance3D" parent="Barbarian/Armature/Skeleton3D/Barbarian_M_02" index="0"]
 visible = false

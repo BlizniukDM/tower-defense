@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://55nu8u60uexy"]
+
+[ext_resource type="Script" path="res://objects/base/base.gd" id="1_bti12"]
+[ext_resource type="PackedScene" uid="uid://d2gydrma7258d" path="res://assets/glb_files/Base.glb" id="2_72tp7"]
+[ext_resource type="FontFile" uid="uid://cce5smaxr8lfu" path="res://assets/Asap-Bold.ttf" id="2_lji1c"]
+
+[node name="Base" type="Node3D" groups=["base"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 2.08165e-12, -6)
+script = ExtResource("1_bti12")
+
+[node name="Label3D" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.5, 0)
+billboard = 1
+font = ExtResource("2_lji1c")
+font_size = 500
+outline_size = 100
+
+[node name="Base" parent="." instance=ExtResource("2_72tp7")]

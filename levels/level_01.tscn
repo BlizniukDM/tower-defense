@@ -2,13 +2,13 @@
 
 [ext_resource type="PackedScene" uid="uid://bcr32k7cn45td" path="res://touch_camera/ray_picker_camera.tscn" id="1_pwm6q"]
 [ext_resource type="MeshLibrary" uid="uid://dg58ppm2i0hbd" path="res://mesh_library/SpaceLibrary.tres" id="2_yg2nn"]
-[ext_resource type="Script" path="res://Base/enemy_path.gd" id="3_usha2"]
+[ext_resource type="Script" path="res://objects/enemy_path.gd" id="3_usha2"]
 [ext_resource type="PackedScene" uid="uid://cics6gg2adanw" path="res://enemy/enemy.tscn" id="4_u3p6w"]
-[ext_resource type="PackedScene" uid="uid://55nu8u60uexy" path="res://Base/base.tscn" id="5_wgb2a"]
-[ext_resource type="Script" path="res://Base/turret_manager.gd" id="6_3mhm0"]
-[ext_resource type="PackedScene" uid="uid://bps5l8hkjywhw" path="res://Base/turret.tscn" id="7_j3f10"]
+[ext_resource type="PackedScene" uid="uid://55nu8u60uexy" path="res://objects/base/base.tscn" id="5_wgb2a"]
+[ext_resource type="Script" path="res://objects/turret_manager.gd" id="6_3mhm0"]
+[ext_resource type="PackedScene" uid="uid://bps5l8hkjywhw" path="res://objects/turrets/turret.tscn" id="7_yvdwq"]
 [ext_resource type="FontFile" uid="uid://cce5smaxr8lfu" path="res://assets/Asap-Bold.ttf" id="8_rcufg"]
-[ext_resource type="Script" path="res://Base/bank.gd" id="9_llaik"]
+[ext_resource type="Script" path="res://objects/base/bank.gd" id="9_llaik"]
 [ext_resource type="PackedScene" uid="uid://doglsi3ujx0ji" path="res://difficulty_manager/difficulty_manager.tscn" id="10_84drx"]
 [ext_resource type="PackedScene" uid="uid://dp1j3pia2ebpc" path="res://ui/victory_layer.tscn" id="11_ha8w2"]
 [ext_resource type="AudioStream" uid="uid://dn6clb35pi5xu" path="res://audio/Level.ogg" id="12_xwj2p"]
@@ -128,7 +128,7 @@ autostart = true
 
 [node name="TurretManager" type="Node3D" parent="." node_paths=PackedStringArray("enemy_path")]
 script = ExtResource("6_3mhm0")
-turret = ExtResource("7_j3f10")
+turret = ExtResource("7_yvdwq")
 enemy_path = NodePath("../EnemyPath")
 
 [node name="Bank" type="MarginContainer" parent="." groups=["bank"]]
