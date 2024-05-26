@@ -4,18 +4,18 @@
 [ext_resource type="PackedScene" uid="uid://bahc2uflo1vpv" path="res://assets/glb_files/Sniper Bullet 3D Model.glb" id="2_iog14"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_6natq"]
-radius = 0.15
+radius = 0.3
 height = 2.8
 
 [node name="Projectile" type="Area3D"]
-transform = Transform3D(-0.8, 2.79029e-16, -6.99382e-08, 2.79029e-16, 0.8, -2.79029e-16, 6.99382e-08, -2.7903e-16, -0.8, 0, 0, 0)
+transform = Transform3D(-0.7, 2.44151e-16, -6.11959e-08, 2.44151e-16, 0.7, -2.44151e-16, 6.11959e-08, -2.44151e-16, -0.7, 0, 0, 0)
 top_level = true
 script = ExtResource("1_qek75")
 speed = 30.0
 damage = 25.0
 
 [node name="Bullet" parent="." instance=ExtResource("2_iog14")]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
+transform = Transform3D(0.5, 1.78412e-23, 4.32245e-15, -7.25668e-24, 0.5, 2.11275e-23, -2.66454e-15, 2.31611e-23, 0.5, 0, 0, 0)
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 2.0

@@ -3,13 +3,13 @@ extends Area3D
 @export var speed : float
 @export var damage : float
 
+
 var direction := Vector3.FORWARD
 
 
 func _physics_process(delta: float) -> void:
     position += speed * direction * delta
-
-
+    
 func _on_timer_timeout() -> void:
     queue_free()
 

@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://cics6gg2adanw" path="res://enemy/enemy.tscn" id="4_u3p6w"]
 [ext_resource type="PackedScene" uid="uid://55nu8u60uexy" path="res://objects/base/base.tscn" id="5_wgb2a"]
 [ext_resource type="Script" path="res://objects/turret_manager.gd" id="6_3mhm0"]
-[ext_resource type="PackedScene" uid="uid://bps5l8hkjywhw" path="res://objects/turrets/turret.tscn" id="7_yvdwq"]
+[ext_resource type="PackedScene" uid="uid://bps5l8hkjywhw" path="res://objects/turrets/turret.tscn" id="7_w1idn"]
 [ext_resource type="FontFile" uid="uid://cce5smaxr8lfu" path="res://assets/Asap-Bold.ttf" id="8_rcufg"]
 [ext_resource type="Script" path="res://objects/base/bank.gd" id="9_llaik"]
 [ext_resource type="PackedScene" uid="uid://doglsi3ujx0ji" path="res://difficulty_manager/difficulty_manager.tscn" id="10_84drx"]
@@ -128,7 +128,7 @@ autostart = true
 
 [node name="TurretManager" type="Node3D" parent="." node_paths=PackedStringArray("enemy_path")]
 script = ExtResource("6_3mhm0")
-turret = ExtResource("7_yvdwq")
+turret = ExtResource("7_w1idn")
 enemy_path = NodePath("../EnemyPath")
 
 [node name="Bank" type="MarginContainer" parent="." groups=["bank"]]
@@ -156,7 +156,7 @@ uppercase = true
 
 [node name="DifficultyManager" parent="." instance=ExtResource("10_84drx")]
 
-[node name="VictoryLayer" parent="." instance=ExtResource("11_ha8w2")]
+[node name="VictoryLayer" parent="." groups=["ui"] instance=ExtResource("11_ha8w2")]
 process_mode = 3
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]

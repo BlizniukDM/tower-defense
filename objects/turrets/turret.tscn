@@ -1,8 +1,8 @@
 [gd_scene load_steps=9 format=3 uid="uid://bps5l8hkjywhw"]
 
 [ext_resource type="Script" path="res://objects/turrets/turret.gd" id="1_a8o4i"]
-[ext_resource type="PackedScene" uid="uid://b1k8blkyr33wl" path="res://objects/projectiles/projectile.tscn" id="1_il6oe"]
-[ext_resource type="PackedScene" uid="uid://dqb1l1gb3sl5q" path="res://assets/glb_files/Cannon.glb" id="3_nipou"]
+[ext_resource type="PackedScene" uid="uid://b1k8blkyr33wl" path="res://objects/projectiles/projectile.tscn" id="2_e61kr"]
+[ext_resource type="PackedScene" uid="uid://dqb1l1gb3sl5q" path="res://assets/glb_files/Cannon.glb" id="3_yglgy"]
 [ext_resource type="PackedScene" uid="uid://dcfjsaptctf4i" path="res://assets/glb_files/TurretBase.glb" id="4_k3m02"]
 [ext_resource type="AudioStream" uid="uid://c6y7k03cgxef5" path="res://audio/Shoot.ogg" id="5_jfjyy"]
 
@@ -45,7 +45,7 @@ _data = {
 
 [node name="Turret" type="Node3D"]
 script = ExtResource("1_a8o4i")
-projectile = ExtResource("1_il6oe")
+projectile = ExtResource("2_e61kr")
 turret_range = 10.0
 
 [node name="TurretBase" type="Node3D" parent="."]
@@ -54,8 +54,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 0.5, 2.08165e-12
 [node name="TurretTop" type="Node3D" parent="TurretBase"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 0.3, 2.08165e-12)
 
-[node name="Cannon" parent="TurretBase/TurretTop" instance=ExtResource("3_nipou")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 1.3, 2.08165e-12)
+[node name="Cannon" parent="TurretBase/TurretTop" instance=ExtResource("3_yglgy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 1.31, 2.08165e-12)
 
 [node name="Timer" type="Timer" parent="."]
 autostart = true

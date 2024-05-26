@@ -24,7 +24,7 @@ func _on_timer_timeout() -> void:
     if target:
         var shot = projectile.instantiate()
         add_child(shot)
-        shot.global_position = cannon.global_position - Vector3(1.967, 1.31, 0)
+        shot.global_position = cannon.global_position + Vector3(1.967, 1.31, 0)
         shot.direction = turret_base.global_transform.basis.z
         animation_player.play("fire")
         shooting.play()
